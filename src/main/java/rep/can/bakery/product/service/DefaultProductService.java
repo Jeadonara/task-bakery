@@ -1,6 +1,5 @@
 package rep.can.bakery.product.service;
 
-import rep.can.bakery.product.dto.GetProductsOutput;
 import rep.can.bakery.product.dto.Product;
 import rep.can.bakery.product.dto.ProductSaleDetail;
 

@@ -3,7 +3,7 @@ package rep.can.bakery.product.dto;
 import java.math.BigDecimal;
 
 public class ProductSaleDetail {
-    private final int saleSize;
+    private final Integer saleSize;
     private final BigDecimal price;
 
     private ProductSaleDetail(int saleSize, BigDecimal price) {
@@ -19,7 +19,7 @@ public class ProductSaleDetail {
         return price;
     }
 
-    public static ProductSaleDetail of(int saleSize, BigDecimal price) {
+    public static ProductSaleDetail of(Integer saleSize, BigDecimal price) {
         return new ProductSaleDetail(saleSize, price);
     }
 
