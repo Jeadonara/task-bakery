@@ -1,18 +1,30 @@
 package rep.can.bakery.product.service;
 
+import rep.can.bakery.product.dto.GetProductsOutput;
+import rep.can.bakery.product.dto.GetProductsSearchInput;
 import rep.can.bakery.product.dto.Product;
 import rep.can.bakery.product.dto.ProductSaleDetail;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class DefaultProductService implements ProductService {
 
     @Override
-    public GetProductsOutput getProducts() {
+    public GetProductsOutput getProducts(GetProductsSearchInput searchInput) {
+        List<String> productCodesToFilter = searchInput.getProductCodes();
+
+        List<Product> products = getDefaultProducts();
+
+        List<Product> filteredProducts = products.stream()
+                .filter(product -> productCodesToFilter.contains(product.getCode()))
+                .collect(Collectors.toList());
+
         GetProductsOutput output = new GetProductsOutput();
-        output.setProducts(getDefaultProducts());
+        output.setProducts(filteredProducts);
+
         return output;
     }
 

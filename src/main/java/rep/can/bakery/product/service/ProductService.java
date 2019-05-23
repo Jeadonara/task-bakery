@@ -1,10 +1,9 @@
 package rep.can.bakery.product.service;
 
-import rep.can.bakery.product.dto.Product;
-
-import java.util.List;
+import rep.can.bakery.product.dto.GetProductsOutput;
+import rep.can.bakery.product.dto.GetProductsSearchInput;
 
 public interface ProductService {
 
-    List<Product> getProducts();
+    GetProductsOutput getProducts(GetProductsSearchInput searchInput);
 }
