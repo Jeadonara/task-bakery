@@ -32,6 +32,12 @@ public class MathUtilsTest {
         assertEquals(0, divisionFactors2.get(3).compareTo(1));
         assertEquals(2, divisionFactors2.size());
 
+        Map<Integer, Integer> divisionFactors3 = MathUtils.getDivisionFactors(14, Arrays.asList(2, 5, 8));
+
+        assertEquals(0, divisionFactors3.get(8).compareTo(1));
+        assertEquals(0, divisionFactors3.get(2).compareTo(3));
+        assertEquals(2, divisionFactors3.size());
+
 
     }
 
