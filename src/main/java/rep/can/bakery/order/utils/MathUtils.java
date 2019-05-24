@@ -19,7 +19,7 @@ public final class MathUtils {
      * Otherwise Empty Map
      */
     public static Map<Integer, Integer> getDivisionFactors(Integer dividend, List<Integer> divisors) {
-        if(divisors.isEmpty())
+        if (divisors.isEmpty())
             return Collections.EMPTY_MAP;
 
         divisors.sort(Collections.reverseOrder());
@@ -44,11 +44,11 @@ public final class MathUtils {
             result = new HashMap<>();
             effectiveDividend = getEffectiveDividend(result, dividend, numbersToIterate);
 
-            if (effectiveDividend != 0) {
+            if (effectiveDividend > 0 && remainingDivisors.size() > 0) {
                 remainingDivisors.pop();
             }
 
-        } while (effectiveDividend != 0 && effectiveDivisors.size() > 0);
+        } while (effectiveDividend > 0 && effectiveDivisors.size() > 0);
 
 
         return effectiveDividend == 0 ? result : Collections.EMPTY_MAP;
