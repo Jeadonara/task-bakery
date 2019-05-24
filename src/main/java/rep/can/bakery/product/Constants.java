@@ -25,7 +25,7 @@ public final class Constants {
         );
 
         Product mb11 = new Product("Blueberry Muffin", "MB11");
-        vs5.setSaleDetails(
+        mb11.setSaleDetails(
                 Arrays
                         .asList(
                                 ProductSaleDetail.of(2, BigDecimal.valueOf(9.95)),
@@ -35,7 +35,7 @@ public final class Constants {
         );
 
         Product cf = new Product("Croissant", "CF");
-        vs5.setSaleDetails(
+        cf.setSaleDetails(
                 Arrays
                         .asList(
                                 ProductSaleDetail.of(3, BigDecimal.valueOf(5.95)),
