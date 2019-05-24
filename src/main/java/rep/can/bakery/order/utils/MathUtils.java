@@ -19,6 +19,8 @@ public final class MathUtils {
      * Otherwise Empty Map
      */
     public static Map<Integer, Integer> getDivisionFactors(Integer dividend, List<Integer> divisors) {
+        if(divisors.isEmpty())
+            return Collections.EMPTY_MAP;
 
         divisors.sort(Collections.reverseOrder());
 
