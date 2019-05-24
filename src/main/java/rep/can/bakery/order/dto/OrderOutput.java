@@ -53,7 +53,7 @@ public class OrderOutput {
         saleDetails
                 .forEach(d -> {
                     builder.append(System.lineSeparator());
-                    builder.append(d.toString());
+                    builder.append("\t" + d.toString());
                 });
         return builder.toString();
     }

@@ -13,4 +13,17 @@ public class CreateOrdersOutput {
     public void setOrderOutputs(List<OrderOutput> orderOutputs) {
         this.orderOutputs = orderOutputs;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        orderOutputs
+                .forEach(o -> {
+                    builder.append(System.lineSeparator());
+                    builder.append(o.toString());
+                    builder.append(System.lineSeparator());
+                });
+        return builder.toString();
+
+    }
 }
