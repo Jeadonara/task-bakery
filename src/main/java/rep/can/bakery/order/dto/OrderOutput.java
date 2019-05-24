@@ -30,6 +30,10 @@ public class OrderOutput {
         return saleDetails;
     }
 
+    public Boolean isEmpty() {
+        return this.isEmpty;
+    }
+
     public static OrderOutput emptyOutputOfOrder(Order order) {
         return new OrderOutput(order, BigDecimal.ZERO, Collections.emptyList(), true);
     }
