@@ -85,7 +85,7 @@ public class OrderServiceTest {
         assertEquals(orderOutput.getOrder().getProductCode(), order.getProductCode(), "Unexpected Product for Order Output");
         assertEquals(orderOutput.getOrder().getAmount(), order.getAmount(), "Input And Output Amount Of Product Order Doesn't Match");
 
-        assertEquals(BigDecimal.valueOf(17.88).compareTo(orderOutput.getTotalPrice()),0,"Unexpected Total Price");
+        assertEquals(BigDecimal.valueOf(17.98).compareTo(orderOutput.getTotalPrice()),0,"Unexpected Total Price");
 
         OrderSaleDetail orderSaleDetail = orderOutput.getSaleDetails().get(0);
         assertEquals(orderSaleDetail.getAmount().compareTo(2),0,"Unexpected Order Sale Amount");
