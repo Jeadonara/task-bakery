@@ -23,25 +23,27 @@ public final class MathUtils {
         divisors.sort(Collections.reverseOrder());
 
         LinkedList<Integer> effectiveDivisors = new LinkedList<>(divisors);
-        LinkedList<Integer> effectiveDivisorsClone = new LinkedList<>(effectiveDivisors);
 
         Map<Integer, Integer> result;
         Integer effectiveDividend;
-        LinkedList<Integer> numbersToIterate = new LinkedList<>(effectiveDivisors);
+
         Integer holdNumber = effectiveDivisors.pop();
+        LinkedList<Integer> remainingDivisors = new LinkedList<>(effectiveDivisors);
 
         do {
-            if (numbersToIterate.size() == 1) {
+            if (remainingDivisors.size() == 1 && divisors.size() > 2) {
                 holdNumber = effectiveDivisors.pop();
+                remainingDivisors.addAll(new LinkedList<>(effectiveDivisors));
             }
+
+            LinkedList<Integer> numbersToIterate = merge(holdNumber, remainingDivisors);
 
             //Clear all previous calculation result to iterate on new divisor list
             result = new HashMap<>();
             effectiveDividend = getSequence(result, dividend, numbersToIterate);
 
             if (effectiveDividend != 0) {
-                effectiveDivisors.pop();
-                numbersToIterate = merge(holdNumber, effectiveDivisors);
+                remainingDivisors.pop();
             }
 
         } while (effectiveDividend != 0 && effectiveDivisors.size() > 0);
