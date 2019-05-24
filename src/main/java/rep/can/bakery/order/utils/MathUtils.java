@@ -31,7 +31,7 @@ public final class MathUtils {
         LinkedList<Integer> remainingDivisors = new LinkedList<>(effectiveDivisors);
 
         do {
-            if (remainingDivisors.size() == 1 && divisors.size() > 2) {
+            if (remainingDivisors.size() == 0 && divisors.size() > 2) {
                 holdNumber = effectiveDivisors.pop();
                 remainingDivisors.addAll(new LinkedList<>(effectiveDivisors));
             }
