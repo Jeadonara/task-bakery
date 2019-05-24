@@ -31,7 +31,7 @@ public final class MathUtils {
         LinkedList<Integer> remainingDivisors = new LinkedList<>(effectiveDivisors);
 
         do {
-            if (remainingDivisors.size() == 0 && divisors.size() > 2) {
+            if (remainingDivisors.size() == 0) {
                 holdNumber = effectiveDivisors.pop();
                 remainingDivisors.addAll(new LinkedList<>(effectiveDivisors));
             }
@@ -40,7 +40,7 @@ public final class MathUtils {
 
             //Clear all previous calculation result to iterate on new divisor list
             result = new HashMap<>();
-            effectiveDividend = getSequence(result, dividend, numbersToIterate);
+            effectiveDividend = getEffectiveDividend(result, dividend, numbersToIterate);
 
             if (effectiveDividend != 0) {
                 remainingDivisors.pop();
@@ -61,7 +61,7 @@ public final class MathUtils {
         return output;
     }
 
-    private static Integer getSequence(Map<Integer, Integer> resultToMutate, Integer dividend, LinkedList<Integer> effectiveDivisors) {
+    private static Integer getEffectiveDividend(Map<Integer, Integer> resultToMutate, Integer dividend, LinkedList<Integer> effectiveDivisors) {
         Integer effectiveDividend = dividend;
 
         //Clear all previous calculation result to iterate on new divisor list
