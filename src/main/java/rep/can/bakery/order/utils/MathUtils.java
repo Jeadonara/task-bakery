@@ -1,4 +1,4 @@
-package rep.can.bakery.order;
+package rep.can.bakery.order.utils;
 
 import java.util.Collections;
 import java.util.HashMap;
