@@ -1,6 +1,6 @@
 package rep.can.bakery.order.service;
 
-import rep.can.bakery.order.MathUtils;
+import rep.can.bakery.order.utils.MathUtils;
 import rep.can.bakery.order.dto.CreateOrdersInput;
 import rep.can.bakery.order.dto.CreateOrdersOutput;
 import rep.can.bakery.order.dto.Order;

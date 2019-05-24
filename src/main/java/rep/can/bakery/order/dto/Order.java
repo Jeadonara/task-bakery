@@ -1,5 +1,7 @@
 package rep.can.bakery.order.dto;
 
+import static rep.can.bakery.infrastructure.Constants.STRING_EMPTY;
+
 public class Order {
     private final String productCode;
     private final Integer amount;
@@ -19,5 +21,10 @@ public class Order {
 
     public static Order of(String product, Integer amount) {
         return new Order(product, amount);
+    }
+
+    @Override
+    public String toString() {
+        return amount + STRING_EMPTY + productCode;
     }
 }

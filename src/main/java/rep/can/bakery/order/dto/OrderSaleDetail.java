@@ -1,6 +1,10 @@
 package rep.can.bakery.order.dto;
 
+import rep.can.bakery.infrastructure.NumberUtils;
+
 import java.math.BigDecimal;
+
+import static rep.can.bakery.infrastructure.Constants.*;
 
 public class OrderSaleDetail {
 
@@ -24,5 +28,10 @@ public class OrderSaleDetail {
 
     public BigDecimal getSalePrice() {
         return salePrice;
+    }
+
+    @Override
+    public String toString() {
+        return amount + STRING_EMPTY + STRING_TIMES + STRING_EMPTY + saleSize + STRING_USD_SYMBOL + NumberUtils.formatBigDecimal(salePrice, DEFAULT_SCALE);
     }
 }
